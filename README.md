@@ -1,526 +1,340 @@
-🌴 Hacker House Goa 2026 — ID Card & PFP Frame Generator
+# 🌴 Hacker House Goa 2026 — #FrameInGoa Generator
 
-Create • Customize • Download • ShareA browser-based graphic generator created for Hacker House Goa 2026 and the #FrameInGoa community.
+A modern, interactive **Builder ID Card & PFP Frame Generator** created for **Hacker House Goa 2026**.
 
-📌 Overview
+The application allows participants to upload their photo, enter their details, customize their ID card, preview it in real time, generate a unique ID code and QR code, and download the final design as a high-quality image.
 
-Hacker House Goa 2026 — ID Card & PFP Frame Generator is a client-side web application that lets participants create personalized event graphics directly in their browser.
+---
 
-Users can upload a profile photo, enter their details, choose a graphic format, adjust their photo, and generate a high-resolution event graphic without needing external image-editing software.
+## ✨ Features
 
-The project uses the HTML5 Canvas API for graphic rendering and QRCode.js for generating real scannable QR codes.
+### 🪪 Builder ID Card Generator
 
-✨ Features
+* Generate personalized Hacker House Goa 2026 Builder ID Cards.
+* Enter:
 
-🪪 Builder ID Card
+  * Name
+  * Team Name
+  * Role
+  * Email
+  * Phone Number
+  * Tech Stack
+* Real-time canvas preview.
+* Automatically updates the design whenever the user changes their information.
 
-Personalized participant name
+### 🎨 Multiple Templates
 
-Phone number
+The generator currently provides two ID-card layouts:
 
-Email
+* **Beach Badge — Vertical**
+* **Boarding Pass — Horizontal**
 
-Role
+The application also includes a **PFP Frame Overlay** mode.
 
-Technology stack
+### 📸 Photo Upload & Customization
 
-Profile photo
+Users can:
 
-Automatic participant ID
+* Upload JPG, PNG, WEBP or HEIC images.
+* Drag and drop a photo.
+* Zoom the uploaded image.
+* Move the image horizontally.
+* Move the image vertically.
+* Reset the photo position.
 
-Scannable QR code
+These controls are implemented directly in the browser.
 
-#FrameInGoa branding
+### 🔳 Dynamic QR Code
 
-🎟️ Boarding Pass
+Each generated card contains a real scannable QR code.
 
-A horizontal Boarding Pass format containing:
+The QR code can include:
 
-Passenger name
+* Hacker House Goa 2026
+* Unique ID
+* Name
+* Team
+* Role
+* Email
+* Phone
+* Tech Stack
+* `#FrameInGoa`
 
-Phone
+A unique identifier is automatically generated in the format:
 
-Role & tech stack
-
-Email
-
-QR code
-
-Pass ID
-
-Goa event information
-
-#FrameInGoa branding
-
-🖼️ PFP Frame Overlay
-
-A square profile-picture frame supporting:
-
-Profile photo
-
-Tropical Goa background
-
-Gradient frame
-
-Event branding
-
-#FrameInGoa
-
-Optional team name
-
-📸 Photo Upload
-
-Click to upload
-
-Drag and drop
-
-JPG, PNG, WEBP and other browser-supported formats
-
-🔍 Photo Controls
-
-Zoom
-
-Horizontal pan
-
-Vertical pan
-
-Reset photo position
-
-🔢 Automatic ID Generation
-
-ID cards receive a unique code in the format:
-
+```text
 HHG26-XXXXXX
+```
 
-Example:
+### 🖼️ HD Canvas Rendering
 
-HHG26-EKP03Q
+The ID cards are rendered using the **HTML5 Canvas API**, allowing the application to generate high-resolution graphics.
 
-📱 Real Scannable QR Code
+The vertical Builder ID Card uses a **1000 × 1500** canvas, while the horizontal Boarding Pass uses a **1500 × 800** canvas.
 
-The QR code can contain participant and event information such as:
+### ⬇️ Export & Sharing
 
-HACKER HOUSE GOA 2026
-ID: HHG26-XXXXXX
-Name: Participant Name
-Phone: +91XXXXXXXXXX
-Role: Software Engineer
-Email: example@email.com
-Stack: React • Node.js • Python
-#FrameInGoa
+Users can:
 
-💾 HD PNG Download
+* Download the generated card as an HD image.
+* Copy the generated image to the clipboard.
+* Share the design to X using the `#FrameInGoa` hashtag.
 
-Generated graphics can be downloaded as high-quality PNG files.
+---
 
-Example:
+## 🎨 Design
 
-HHGoa2026_Builder_ID_HHG26-XXXXXX.png
-HHGoa2026_PFP_Frame.png
+The interface follows a tropical Goa-inspired visual system featuring:
 
-📋 Copy Image
+* Emerald green background
+* Yellow/gold highlights
+* Pink accents
+* Cyan highlights
+* Glassmorphism panels
+* Animated loading screen
+* Responsive layout
+* Gradient borders and glowing effects
+* Custom typography
 
-Copy the generated graphic directly to the clipboard where browser permissions support image clipboard operations.
+The main design system is defined through CSS variables for colors, typography, spacing, borders and transitions.
 
-𝕏 Share to X
+---
 
-Generate the graphic, download it, and open an X post composer with a pre-filled Hacker House Goa / #FrameInGoa message.
+## 🛠️ Technologies Used
 
-🛠️ Tech Stack
+| Technology     | Purpose                              |
+| -------------- | ------------------------------------ |
+| HTML5          | Application structure                |
+| CSS3           | UI, animations and responsive design |
+| JavaScript     | Application logic and interactions   |
+| HTML5 Canvas   | ID card rendering                    |
+| QRCode.js      | QR code generation                   |
+| Font Awesome   | Icons                                |
+| Google Fonts   | Custom typography                    |
+| FileReader API | Client-side image upload             |
+| Clipboard API  | Copy generated image                 |
 
-Technology
+---
 
-Purpose
+## 📁 Project Structure
 
-HTML5
-
-Application structure
-
-CSS3
-
-UI, layout and visual styling
-
-JavaScript
-
-Application logic
-
-HTML5 Canvas
-
-Graphic generation
-
-QRCode.js
-
-QR code generation
-
-Google Fonts
-
-Typography
-
-Font Awesome
-
-Icons
-
-FileReader API
-
-Image upload and processing
-
-Clipboard API
-
-Copy generated images
-
-Fonts
-
-Outfit
-
-Space Grotesk
-
-Tiro Devanagari Hindi
-
-🎨 Design
-
-The visual identity follows a Goa tropical / hacker-house aesthetic with:
-
-Deep emerald green backgrounds
-
-Tropical palm and jungle artwork
-
-Neon yellow accents
-
-Green, pink and cyan gradient borders
-
-Hacker House Goa branding
-
-Tropical wooden signpost artwork
-
-Responsive glass-style web UI
-
-Canvas Formats
-
-Format
-
-Canvas Size
-
-Beach Badge / ID Card
-
-1000 × 1500 px
-
-Boarding Pass
-
-1500 × 800 px
-
-PFP Frame
-
-1000 × 1000 px
-
-📁 Project Structure
-
-HH-Goa-2026-ID-Card-Generator/
+```text
+HH-Goa-2026/
 │
-├── index.html
-├── style.css
-├── main.js
+├── index.html          # Main application interface
+├── style.css           # Design system and responsive styling
+├── main.js             # Generator logic and canvas rendering
 │
-├── card-bg.png
-├── title-logo.png
-├── id_card_poster.png
+├── card-bg.png         # ID card background artwork
+├── title-logo.png      # Hacker House Goa title graphic
 │
-└── README.md
+└── README.md           # Project documentation
+```
 
-File
+> Make sure `card-bg.png` and `title-logo.png` are included in the repository because `main.js` loads these assets for the generated card design.
 
-Purpose
+---
 
-index.html
+## 🚀 Getting Started
 
-Main application interface and input controls
+### 1. Clone the repository
 
-style.css
-
-Website styling and responsive layout
-
-main.js
-
-Canvas rendering, QR generation, photo processing and application logic
-
-card-bg.png
-
-Tropical Goa background
-
-title-logo.png
-
-Hacker House Goa title artwork
-
-id_card_poster.png
-
-Project preview image
-
-README.md
-
-Project documentation
-
-Keep card-bg.png and title-logo.png in the same directory as main.js.
-
-⚙️ Application Flow
-
-                 ┌──────────────────────┐
-                 │    Open Generator    │
-                 └──────────┬───────────┘
-                            │
-                            ▼
-                 ┌──────────────────────┐
-                 │ Select Generation    │
-                 │       Mode           │
-                 └──────────┬───────────┘
-                            │
-               ┌────────────┴────────────┐
-               ▼                         ▼
-       ┌────────────────┐        ┌────────────────┐
-       │  Builder ID    │        │   PFP Frame    │
-       │     Card       │        │     Mode       │
-       └───────┬────────┘        └───────┬────────┘
-               │                         │
-               ▼                         ▼
-       ┌────────────────┐        ┌────────────────┐
-       │ Select Template│        │ Enter Team Name │
-       └───────┬────────┘        └───────┬────────┘
-               │                         │
-               └────────────┬────────────┘
-                            ▼
-                  ┌──────────────────┐
-                  │   Upload Photo   │
-                  └────────┬─────────┘
-                           │
-                           ▼
-                  ┌──────────────────┐
-                  │ Zoom / Pan Photo │
-                  └────────┬─────────┘
-                           │
-                           ▼
-                  ┌──────────────────┐
-                  │ Enter Details    │
-                  └────────┬─────────┘
-                           │
-                           ▼
-                  ┌──────────────────┐
-                  │ Canvas Rendering │
-                  └────────┬─────────┘
-                           │
-              ┌────────────┼────────────┐
-              ▼            ▼            ▼
-          Download      Copy Image    Share to X
-
-🧩 How It Works
-
-The application keeps the current user data in a JavaScript state object containing:
-
-mode
-template
-userImage
-zoom
-panX
-panY
-uniqueCode
-name
-phone
-email
-role
-stack
-team
-
-The rendering engine selects one of three graphic formats:
-
-ID Card
- ├── Beach Badge — Vertical
- └── Boarding Pass — Horizontal
-
-PFP Frame
- └── Square Overlay
-
-The Canvas API renders the selected design using the participant data, uploaded photo, event artwork and QR code.
-
-🔐 Privacy
-
-This is primarily a client-side browser application.
-
-Participant information is used to generate the graphic and QR code in the browser. No backend/database is required for the core generator.
-
-However:
-
-Phone numbers can be embedded into the QR code.
-
-Email addresses can be embedded into the QR code.
-
-Entered information may appear directly on the generated graphic.
-
-Generated images can be shared publicly by the user.
-
-Do not enter sensitive information that you do not want to appear on the generated card or QR code.
-
-🚀 Run Locally
-
-1. Clone the repository
-
+```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
+```
 
-2. Open the project
+### 2. Open the project
 
+```bash
 cd YOUR-REPOSITORY
+```
 
-3. Run the application
+### 3. Run the project
 
-Open:
+Since this is a frontend application, you can open `index.html` directly in a browser.
 
-index.html
+For a better development experience, use a local server.
 
-in a modern browser.
+For example, with VS Code:
 
-For development, VS Code Live Server or another local static server is recommended.
+```text
+Right Click → Open with Live Server
+```
 
-🌐 Deploy with GitHub Pages
+Or with Python:
 
-Push the project
+```bash
+python -m http.server 5500
+```
 
-git add .
-git commit -m "Add Hacker House Goa 2026 generator"
-git push origin main
+Then open:
 
-Enable GitHub Pages
+```text
+http://localhost:5500
+```
 
-Go to:
+---
 
-GitHub Repository
-        ↓
-Settings
-        ↓
-Pages
-        ↓
-Build and deployment
-        ↓
-Deploy from a branch
-        ↓
-Branch: main
-        ↓
-Folder: / (root)
-        ↓
-Save
+## 🧑‍💻 How to Use
 
-GitHub Pages will then provide a public website URL.
+### Step 1 — Choose a Mode
 
-🌍 External Resources
+Select one of the available modes:
 
-The project loads:
+* **Builder ID Card**
+* **PFP Frame Overlay**
 
-Google Fonts
+### Step 2 — Choose a Template
 
-Font Awesome
+For Builder ID Card mode, select:
 
-QRCode.js
+* Beach Badge — Vertical
+* Boarding Pass — Horizontal
 
-through external CDNs.
+### Step 3 — Upload Your Photo
 
-An internet connection is therefore recommended unless these dependencies are bundled locally.
+Upload your image by clicking the upload area or dragging and dropping a file.
 
-📱 Browser Compatibility
+### Step 4 — Enter Your Details
 
-The project uses modern browser features including:
+Fill in your:
 
-HTML5 Canvas
+```text
+Name
+Team Name
+Role
+Email
+Phone Number
+Tech Stack
+```
 
-FileReader API
+### Step 5 — Adjust Your Photo
 
-Blob
+Use the controls to:
 
-Clipboard API
+* Zoom
+* Move horizontally
+* Move vertically
 
-Data URL generation
+### Step 6 — Preview
 
-Recommended browsers:
+The generated design is displayed immediately in the **Live Preview** canvas.
 
-Google Chrome
+### Step 7 — Generate & Share
 
-Microsoft Edge
+Download the final HD image, copy it to your clipboard, or share it to X with:
 
-Mozilla Firefox
+```text
+#FrameInGoa
+```
 
-Safari
+---
 
-Some clipboard features may require browser permissions or a secure context.
+## ⚙️ How It Works
 
-🎯 Project Objectives
+The application uses a browser-based state management system to store the user's selected mode, template, uploaded image, photo position, and personal details.
 
-Provide an easy event ID-card generation experience.
+```text
+User
+  │
+  ▼
+Upload Photo
+  │
+  ▼
+Enter Personal Details
+  │
+  ▼
+Select Template / Mode
+  │
+  ▼
+Canvas Rendering Engine
+  │
+  ├── Builder ID Card
+  │      ├── Vertical Badge
+  │      └── Horizontal Boarding Pass
+  │
+  └── PFP Frame
+  │
+  ▼
+Generate Unique ID
+  │
+  ▼
+Generate QR Code
+  │
+  ▼
+Live Preview
+  │
+  ├── Download HD Image
+  ├── Copy Image
+  └── Share to X
+```
 
-Remove the need for external graphic-design software.
+The application's JavaScript state tracks the selected mode, template, uploaded image, zoom/pan values and user information.
 
-Create consistent Hacker House Goa 2026 branding.
+---
 
-Support multiple graphic formats.
+## 🔐 Privacy
 
-Allow participants to personalize their graphics.
+The project is designed as a **client-side web application**.
 
-Generate unique participant IDs.
+User-uploaded photos and entered information are processed in the browser for generating the graphic. The image upload uses the browser's `FileReader` API to load the selected image.
 
-Embed participant information in a scannable QR code.
+No backend database or authentication system is required for the basic generator.
 
-Make graphics easy to download and share.
+---
 
-Provide a visually engaging Goa-inspired experience.
+## 📱 Responsive Design
 
-🔮 Future Scope
+The interface is designed to work across different screen sizes, with responsive styling for the control panel, preview area, forms and action buttons.
 
-More ID card templates
+---
 
-More PFP frame designs
+## 🎯 Project Purpose
 
-Custom event backgrounds
+The goal of this project is to provide an easy and visually engaging way for Hacker House Goa 2026 participants to create personalized digital identity cards and profile-picture frames.
 
-More QR customization
+Instead of manually designing an ID card, users can enter their information and generate a ready-to-share graphic within seconds.
 
-Additional social sharing options
+---
 
-Offline PWA support
+## 🌴 Event
 
-Local font bundling
+**Hacker House Goa 2026**
 
-More export formats
+📅 **28–31 October 2026**
 
-Accessibility improvements
+📍 **Goa, India**
 
-Image compression options
+🏷️ **#FrameInGoa**
 
-Custom team/event branding
+---
 
-Persistent user preferences
+## 👨‍💻 Credits
 
-🤝 Contributing
+**247PM STUDIO**
 
-Contributions and improvements are welcome.
+Built for the Hacker House Goa 2026 `#FrameInGoa` experience.
 
-git checkout -b feature/new-template
-git add .
-git commit -m "Add new template"
-git push origin feature/new-template
+---
 
-Then create a Pull Request on GitHub.
-
-📄 License
+## 📄 License
 
 This project is intended for the Hacker House Goa 2026 / #FrameInGoa experience.
 
-Event-specific logos, artwork, branding and other visual assets may belong to their respective owners. Verify permission before redistributing those assets outside the intended project/event use.
+If you plan to reuse, redistribute, or commercially deploy the project, please obtain the appropriate permissions from the original project/event organizers.
 
-🌴 Hacker House Goa 2026
+---
 
-Event: Hacker House Goa 2026Location: Goa, IndiaDates: 28–31 October 2026Hashtag: #FrameInGoa
+## ⭐ Show Your Build
 
-Build • Ship • Relax • Repeat
+Generated your Hacker House Goa ID?
 
-Made for builders, hackers and creators coming together in Goa. 🌴🚀
+Share it and tag:
 
-⭐ Support
-
-If you like the project, consider giving the repository a ⭐ on GitHub and sharing your generated graphic with:
-
+```text
 #FrameInGoa
 #HackerHouseGoa
 #HackerHouse
+```
+
+**Build • Ship • Relax • Repeat 🌴**
