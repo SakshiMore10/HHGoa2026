@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker House Goa 2026 | ID Card & Frame Generator (#FrameInGoa)</title>
+  <meta name="description" content="Generate your custom HH Goa 2026 Builder ID Card & PFP Frame. Built for Goa Hackathon #FrameInGoa.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- QRCode.js Library for Real Scannable QR Codes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Animated Splash Loader Screen -->
+  <div id="loader-screen" class="loader-screen">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <i class="fa-solid fa-umbrella-beach"></i>
+      </div>
+      <h2 class="loader-title">HACKER <span class="hindi-text">गोवा</span> HOUSE 2026</h2>
+      <p class="loader-subtitle">BUILDER ID CARD & FRAME GENERATOR</p>
+      
+      <div class="loader-bar-container">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-status">
+        <i class="fa-solid fa-bolt"></i> Initializing #FrameInGoa Studio...
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Glow & Palm Decorations -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  
+  <div class="app-container">
+    <!-- Top Navigation / Header -->
+    <header class="app-header">
+      <div class="logo-group">
+        <div class="logo-icon">
+          <i class="fa-solid fa-umbrella-beach"></i>
+        </div>
+        <div class="logo-text">
+          <h1>HACKER <span class="hindi-text">गोवा</span> HOUSE</h1>
+          <p class="subtitle">HACKER HOUSE GOA 2026 • OCT 28 - 31</p>
+        </div>
+      </div>
+      
+      <div class="hashtag-pill">
+        <i class="fa-solid fa-hashtag"></i>
+        <span>FrameInGoa</span>
+      </div>
+    </header>
+
+    <!-- Main Generator Grid -->
+    <main class="generator-grid">
+      
+      <!-- Left Panel: Controls & Inputs -->
+      <section class="control-panel glass-card">
+        
+        <!-- Mode Tabs -->
+        <div class="tab-nav">
+          <button class="tab-btn active" id="tab-id-card" onclick="switchMode('id-card')">
+            <i class="fa-solid fa-id-card"></i>
+            <span>Builder ID Card</span>
+          </button>
+          <button class="tab-btn" id="tab-pfp-frame" onclick="switchMode('pfp-frame')">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>PFP Frame Overlay</span>
+          </button>
+        </div>
+
+        <!-- Template Selector (Shown for ID Card mode) -->
+        <div class="template-selector-group" id="template-selector-container">
+          <label class="section-label"><i class="fa-solid fa-palette"></i> Choose Badge Style</label>
+          <div class="template-options">
+            <button class="template-btn active" id="btn-tmpl-vertical" onclick="setTemplate('vertical')">
+              <i class="fa-solid fa-sd-card"></i>
+              <span>Beach Badge (Vertical)</span>
+            </button>
+            <button class="template-btn" id="btn-tmpl-boarding" onclick="setTemplate('boarding')">
+              <i class="fa-solid fa-ticket"></i>
+              <span>Boarding Pass (Horizontal)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Photo Upload & Adjust Section -->
+        <div class="form-section" id="upload-section">
+          <label class="section-label"><i class="fa-solid fa-camera"></i> Upload Photo</label>
+          <div class="upload-area" id="drop-zone">
+            <input type="file" id="photo-input" accept="image/*" class="file-input">
+            <div class="upload-placeholder">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <div class="upload-text">
+                <strong>Click to upload</strong> or drag & drop photo
+              </div>
+              <span class="upload-hint">Supports JPG, PNG, WEBP, HEIC</span>
+            </div>
+          </div>
+          
+          <!-- Photo Pan / Zoom Sliders -->
+          <div class="photo-controls" id="photo-controls">
+            <div class="slider-control">
+              <label for="zoom-slider"><i class="fa-solid fa-magnifying-glass-plus"></i> Zoom</label>
+              <input type="range" id="zoom-slider" min="0.5" max="2.5" step="0.05" value="1">
+            </div>
+            <div class="slider-control">
+              <label for="pan-x-slider"><i class="fa-solid fa-arrows-left-right"></i> Horizontal Pan</label>
+              <input type="range" id="pan-x-slider" min="-100" max="100" step="1" value="0">
+            </div>
+            <div class="slider-control">
+              <label for="pan-y-slider"><i class="fa-solid fa-arrows-up-down"></i> Vertical Pan</label>
+              <input type="range" id="pan-y-slider" min="-100" max="100" step="1" value="0">
+            </div>
+            <button class="btn-secondary btn-sm" onclick="resetPhotoTransform()">
+              <i class="fa-solid fa-rotate-left"></i> Reset Photo Position
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Required Details Form (Empty Placeholders) -->
+        <div class="form-section" id="details-section">
+          <div class="section-header-row">
+            <label class="section-label" id="details-label"><i class="fa-solid fa-user-pen"></i> Required Details</label>
+          </div>
+
+          <div class="input-grid">
+            <!-- ID Card Fields (Name, Phone, Role, Email, Stack) -->
+            <div class="input-group" id="group-name">
+              <label for="input-name"><i class="fa-solid fa-signature"></i> Name *</label>
+              <input type="text" id="input-name" placeholder="" value="">
+            </div>
+
+            <div class="input-group" id="group-phone">
+              <label for="input-phone"><i class="fa-solid fa-phone"></i> Phone No *</label>
+              <input type="text" id="input-phone" placeholder="" value="">
+            </div>
+
+            <div class="input-group" id="group-role">
+              <label for="input-role"><i class="fa-solid fa-briefcase"></i> Role *</label>
+              <input type="text" id="input-role" placeholder="" value="">
+              <div class="quick-chips">
+                <span onclick="setRole('Software Engineer')">Software Engineer</span>
+                <span onclick="setRole('AI/ML Builder')">AI/ML Builder</span>
+                <span onclick="setRole('UI/UX Designer')">UI/UX Designer</span>
+                <span onclick="setRole('Full Stack Dev')">Full Stack Dev</span>
+              </div>
+            </div>
+
+            <div class="input-group" id="group-email">
+              <label for="input-email"><i class="fa-solid fa-envelope"></i> Email *</label>
+              <input type="email" id="input-email" placeholder="" value="">
+            </div>
+
+            <div class="input-group full-width" id="group-stack">
+              <label for="input-stack"><i class="fa-solid fa-code"></i> Tech Stack *</label>
+              <input type="text" id="input-stack" placeholder="" value="">
+              <div class="quick-chips">
+                <span onclick="addStack('Node.js')">+ Node.js</span>
+                <span onclick="addStack('React')">+ React</span>
+                <span onclick="addStack('Python')">+ Python</span>
+                <span onclick="addStack('Solana')">+ Solana</span>
+                <span onclick="addStack('Tailwind')">+ Tailwind</span>
+              </div>
+            </div>
+
+            <!-- PFP Frame Field (Only Team Name) -->
+            <div class="input-group full-width" id="group-team" style="display: none;">
+              <label for="input-team"><i class="fa-solid fa-users"></i> Team Name *</label>
+              <input type="text" id="input-team" placeholder="" value="">
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right Panel: Live Canvas Preview & Actions -->
+      <section class="preview-panel glass-card">
+        
+        <div class="preview-header">
+          <div class="preview-title">
+            <i class="fa-solid fa-eye"></i> Live Preview
+          </div>
+          <div class="preview-status">
+            <span class="status-dot"></span> HD Canvas Active
+          </div>
+        </div>
+
+        <!-- Canvas Display Container -->
+        <div class="canvas-wrapper">
+          <canvas id="card-canvas"></canvas>
+        </div>
+
+        <!-- Action Toolbar -->
+        <div class="action-toolbar">
+          <button class="btn-primary btn-lg" onclick="downloadGraphic()">
+            <i class="fa-solid fa-download"></i> Download HD Image
+          </button>
+          
+          <button class="btn-x-share btn-lg" onclick="shareToX()">
+            <i class="fa-brands fa-x-twitter"></i> Share to X (#FrameInGoa)
+          </button>
+
+          <button class="btn-secondary btn-lg" onclick="copyImageToClipboard()" title="Copy image to clipboard">
+            <i class="fa-solid fa-copy"></i> Copy Image
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Official HH Goa 2026 Generator • Tagline: <strong>#FrameInGoa</strong> • 247PM STUDIO</p>
+    </footer>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- App Script -->
+  <script src="main.js"></script>
+</body>
+</html>
